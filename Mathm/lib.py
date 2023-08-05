@@ -1,3 +1,4 @@
+from pylib import *
 def A(m,n): 
     if (m==1):
         return n
@@ -35,7 +36,7 @@ def findprimes(num):
         if isPrime(i):
             ans.append(i)
     return ans
-def rounding(num, n):
+def roundm(num, n):
     if '.' in str(num):
         if len(str(num).split('.')[1]) > n and str(num).split('.')[1][n] == '5':
             num += 1 * 10 ** -(n+1)
@@ -59,5 +60,16 @@ def powm(a,m):
                 y = x * y
                 n = n - 1
     return y
-def sqrt(num):
-    return num**0.5
+
+lib=DotDict({
+    "A":A,
+    "C":C,
+    "factor":factor,
+    "gcd":gcd,
+    "lcm":lcm,
+    "pow":powm,
+    "isPrime":isPrime,
+    "findprimes":findprimes,
+    "round":roundm,
+    "reciprocal":reciprocal
+})
